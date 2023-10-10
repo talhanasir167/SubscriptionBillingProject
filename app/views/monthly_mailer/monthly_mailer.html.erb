@@ -1,0 +1,9 @@
+<h1> Monthly#monthly_mailer </h1>
+<p> Hi Mr
+  <%= @user.name %>, Your Monthly Subscription Amount is <%= @amount %>
+</p>
+<% link = "http://localhost:3000/billings/#{@billing.id}" %>
+<a href=<%= link %> ></a>
+<p>
+  <%= @greeting %>
+</p>
