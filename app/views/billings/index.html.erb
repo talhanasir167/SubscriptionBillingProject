@@ -1,0 +1,22 @@
+<div class="container main-container align-middle bg-light align-self-center">
+  <h1> Billing Information </h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"> User Name </td>
+        <th scope="col"> Subscription Price </td>
+        <th scope="col"> Extra Usage Unit Price </td>
+        <th scope="col"> Total Amount </td>
+        <th scope="col" colspan="3"></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= current_user.name %></td>
+        <td><%= @sum %></td>
+        <td><%= @extra_feature_sum %></td>
+        <td><%= @total_sum %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

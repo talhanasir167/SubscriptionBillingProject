@@ -1,0 +1,23 @@
+<div class="container main-container align-middle bg-light align-self-center">
+  <p id='notice'><%= notice %></p>
+  <h2 class="text-info"> Subscriptions </h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope='col'> Plan ID </th>
+        <th scope='col'> Plan Name </th>
+        <th scope='col'> Plan Monthly Fee </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @subscribed_plans.each do |subscribed_plans| %>
+        <tr>
+          <td><%= subscribed_plans.id %></td>
+          <td><%= subscribed_plans.plan_name %></td>
+          <td><%= subscribed_plans.monthly_fee %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <td><%= button_to "Activate", activate_index_path,remote: true, class: "btn btn-warning" if current_user.buyer? %></td>
+</div>

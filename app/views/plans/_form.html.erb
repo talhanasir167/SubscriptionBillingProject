@@ -1,0 +1,32 @@
+<% stylesheet_link_tag "devise_style" %>
+<div>
+  <p id="notice"><%= notice %></p>
+  <%= form_with(model: plan,class: "ajax", local: false) do |form| %>
+    <% if plan.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(plan&.errors.count, "error")%> prohibited this plan from being saved: </h2>
+        <ul>
+          <% plan&.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field form-group" >
+      <%= form.label :Plan_Name %>
+      <%= form.text_field :plan_name,placeholder: "Plan Name",class: 'form-control form-control-lg', required: true %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :Monthly_Fee %>
+      <%= form.text_field :monthly_fee ,placeholder: "Fee",class: 'form-control form-control-lg', required: true %>
+    </div>
+    
+    <div class = "actions">
+      <%= form.submit "Create Plan", class: "btn btn-primary" %>
+      <%= link_to 'Back' , plans_path, class: "btn btn-primary" %>
+    </div>
+  
+  <% end %>
+</div>

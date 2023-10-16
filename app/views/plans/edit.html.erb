@@ -1,0 +1,9 @@
+<div class="container main-container align-middle bg-light align-self-center">
+  <h1> Edit Your Plan </h1>
+  <div>
+    <%= link_to 'Add Feature To This Plan ', new_plan_feature_path(@plan), class: "actions btn btn-primary" %>
+    <%= link_to 'Show All Features', [@plan, :features] %>
+  </div>
+  <br>
+  <%= render 'form', plan: @plan %>
+</div>
