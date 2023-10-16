@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid tex-center">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      
+        <li class = "nav-item m-1">
+          <%= link_to 'Buyer Profiles', dashboards_path, class: "btn" %>
+        </li>
+
+        <li class = "nav-item m-1">
+        <%= link_to ' All Records',records_path, class: "btn" if policy(Record).index? %>
+        </li>
+
+        <li class = "nav-item m-1">
+          <%= link_to 'Profile', dashboard_path(current_user), class: "btn" %>
+        </li>
+
+        <li class = "nav-item m-1">
+          <%= link_to 'Plans', plans_path , class: "btn" %>
+        </li>
+
+        <li class = "nav-item m-1">
+        <%= link_to 'Extra Usage', usage_features_path, class: "btn" if policy(UsageFeature).show? %>
+        </li>
+    
+        <li class = "nav-item m-1">
+        <%= link_to 'Subscription', subscription_path(current_user), class: "btn" if policy(Subscription).show? %>
+        </li>
+        
+        <li class = "nav-item m-1">
+        <%= link_to 'Billing Information',billing_path(current_user), class: "btn" if policy(Billing).show? %>
+        </li>
+
+        <li class = "nav-item m-1">
+        <%= link_to 'Edit Profile',edit_user_registration_path, class: "btn" %>
+        </li>
+
+        <li class = "nav-item m-1">
+        <%= link_to 'Signed Out' , destroy_user_session_path, method: :delete, class: "actions btn btn-primary" %>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+</nav>

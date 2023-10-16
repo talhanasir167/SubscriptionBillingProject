@@ -1,0 +1,26 @@
+<div class="container main-container align-middle bg-light align-self-center">
+  <h1> Plans </h1>
+  <table class="table">
+    <thead >
+      <tr>
+        <th scope="col"> Plan ID </th>
+        <th scope="col"> Plan Name </th>
+        <th scope="col"> Monthly Fee </th>
+        <th scope="col" colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @plan.each do |plan| %>
+        <tr>
+          <td ><%= plan.id %></td>
+          <td ><%= plan.plan_name %></td>
+          <td ><%= number_to_currency(plan.monthly_fee) %></td>
+          <td class="text-center"><%= link_to 'show', plan %></td>
+          <td class="text-center"><%= link_to 'Edit', edit_plan_path(plan) if policy(Plan).edit? %></td>
+          <td class="text-center"><%= link_to 'Destroy', plan , remote: true, method: :delete, data: {confirm: 'Are you Sure'} if policy(Plan).destroy? %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Plan', new_plan_path, class: "actions btn btn-primary" if policy(Plan).new? %>
+</div>

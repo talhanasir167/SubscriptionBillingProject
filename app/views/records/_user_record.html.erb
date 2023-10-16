@@ -1,0 +1,11 @@
+<% @record.each do |record| %>
+  <tr>
+    <td><%= current_user.name %></td>
+    <td><%= record.total_payement %></td>
+    <td><%= record.created_at.to_date %></td>
+    <td><%= record.updated_at.to_date + 1.months %></td>
+    <td>
+      <p> Card </p>
+    </td>
+  </tr>
+<% end %>
